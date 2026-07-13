@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ETHICAJOU.SA</title>
+ <style>
+    body {
+        background-color: lightblue;
+        text-align: center;
+        font-family: Arial;
+    }
+
+    h1 {
+        color: blue;
+    }
+
+    p {
+        color: red;
+    }
+
+    button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 5px;
+    }
+     
+   button:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+} 
+     .produit {
+    background-color: white;
+    width: 220px;
+    padding: 15px;
+    border-radius: 10px;
+}
+     .produit img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+     #produits {
+    text-align: center;
+}
+
+.liste-produits {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+     .prix {
+    font-weight: bold;
+    color: green;
+    font-size: 18px;
+}
+</style>
+    </head>
+
+   <script>
+    function commander(produit) {
+        alert("Vous avez choisi : " + produit);
+    }
+</script> 
+<body> 
+    
+    <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#apropos">À propos</a>
+    <a href="#activites">Nos activités</a>
+    <a href="#contact">Contact</a>
+</nav>
+    <img src="logo.jpeg" alt="Logo ETHICAJOU.SA" width="400">
+
+    <h1>Bienvenue sur ETHICAJOU.SA</h1>
+    
+    <h2>À propos de nous</h2>
+
+<p>
+    ETHICAJOU.SA est une entreprise située à Kolda, en Casamance.
+</p>
+
+<h2>Nos activités</h2>
+
+<ul>
+    <li>Transformation de noix de cajou</li>
+    <li>Production de noix de cajou grillées</li>
+    <li>Commercialisation de produits locaux</li>
+</ul>
+    
+    <h2>Quel est votre nom ?</h2>
+
+<input type="text" id="nom" placeholder="Entrez votre nom">
+
+<button onclick="saluer()">Valider</button>
+
+<p id="message"></p>
+
+<script>
+    function saluer() {
+        let nom = document.getElementById("nom").value;
+
+        document.getElementById("message").innerHTML =
+            "Bienvenue " + nom + " sur le site ETHICAJOU.SA !";
+    }
+</script>
+
+    <p style="color: red;">
+        Nous sommes en Casamance, plus précisément à Kolda.
+    </p>
+
+    <a href="https://www.google.com">Aller sur Google</a>
+
+    <br><br>
+
+    <button onclick="alert('Bravo ! Vous avez cliqué sur le bouton.')">
+        Cliquez ici
+    </button>
+    
+  <section id="produits">
+
+    <h2>Nos produits</h2>
+
+    <div class="liste-produits">
+
+        <div class="produit">
+            <img src="cajou grillées.jpeg" alt="Noix de cajou grillées" width="250">
+            <h3>Noix de cajou grillées salé</h3>
+            
+            <p>Découvrez nos Noix de Cajou transformées à Kolda</p>
+            <p class="prix">prix : 2500 FCFA</p> 
+            
+           <label>Quantité :</label>
+<input type="number" min="1" value="1">
+
+<br><br>
+
+<button onclick="commander('Noix de cajou grillées salées')">
+    Commander
+    
+</button>
+        
+        </div>
+
+        <div class="produit">
+            <img src="cajou Bio.jpeg" alt="Noix de cajou grillées" width="300">
+            <h3>Noix de cajou grillées simple</h3>
+            <p>Découvrez nos Noix de Cajou transformées à Kolda</p>
+            <p class="prix">prix : 2000 FCFA</p>  
+            <label>Quantité :</label>
+<input type="number" min="1" value="1">
+
+<br><br>
+
+<button onclick="commander('Noix de cajou grillées simple')">
+    Commander
+</button>
+
+    </div>
+
+</section>  
+</section>
+    
+    <h2 id="contact">Contactez-nous</h2>
+
+<form>
+    <input type="text" placeholder="Votre nom">
+    <br><br>
+
+    <input type="email" placeholder="Votre email">
+    <br><br>
+
+    <textarea placeholder="Votre message"></textarea>
+    <br><br>
+
+    <button type="submit">Envoyer</button>
+</form>
+
+    <script>
+    function envoyerMessage(event) {
+        event.preventDefault();
+        alert("Merci ! Votre message a bien été envoyé.");
+    }
+   
+</script> 
+
+</body>
+
+</html>
