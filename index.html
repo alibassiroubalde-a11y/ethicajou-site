@@ -86,8 +86,14 @@ nav a:hover {
 
    <script>
     function commander(produit) {
-        alert("Vous avez choisi : " + produit);
+        alert("Vous avez choisi : " + produit + 
+              ". Remplissez le formulaire pour envoyer votre commande.");
+
+        document.getElementById("contact").scrollIntoView({
+            behavior: "smooth"
+        });
     }
+</script>
 </script> 
 <body> 
     
