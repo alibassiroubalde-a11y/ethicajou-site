@@ -199,28 +199,26 @@ nav a:hover {
 </section>
     
     <h2 id="contact">Contactez-nous</h2>
-<iframe
-      id="JotFormIFrame-261934932078061"
-      title="Formulaire de contact"
-      onload="window.parent.scrollTo(0,0)"
-      allowtransparency="true"
-      allow="geolocation; microphone; camera; fullscreen; payment"
-      src="https://form.jotform.com/261934932078061"
-      frameborder="0"
-      style="min-width:100%;max-width:100%;height:1200px;border:none;"
-      scrolling="no"
-    >
-    </iframe>
-    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261934932078061']",
+<h2 id="contact">Contactez-nous / Commander</h2>
 
-    <script>
-    function envoyerMessage(event) {
-        event.preventDefault();
-        alert("Merci ! Votre message a bien été envoyé.");
-    }
-   
-</script> 
+<iframe
+    id="JotFormIFrame-261934932078061"
+    title="Formulaire de contact"
+    src="https://form.jotform.com/261934932078061"
+    frameborder="0"
+    style="min-width:100%; max-width:100%; height:1200px; border:none;"
+    scrolling="no">
+</iframe>
+
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+
+<script>
+    window.jotformEmbedHandler(
+        "iframe[id='JotFormIFrame-261934932078061']",
+        "https://form.jotform.com/"
+    );
+</script>
+    
 
 </body>
 
