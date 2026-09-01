@@ -297,6 +297,26 @@ nav a:hover {
     scrolling="no">
 </iframe>
 
+<script>
+window.addEventListener("message", function(event) {
+
+    if (event.data && event.data.action === "submission-completed") {
+
+        // Attendre 2 secondes après l'envoi
+        setTimeout(function() {
+
+            const iframe = document.getElementById(
+                "JotFormIFrame-261934932078061"
+            );
+
+            // Recharger le formulaire
+            iframe.src = "https://form.jotform.com/261934932078061";
+
+        }, 2000);
+    }
+
+});
+</script>
 <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
 
 <script>
