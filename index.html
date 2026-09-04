@@ -1,331 +1,1168 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETHICAJOU.SA</title>
- <style>
-     img {
-    max-width: 100%;
-    height: auto;
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>ETHICAJOU.SA - Noix de cajou</title>
+
+
+<style>
+
+/* ==============================
+   STYLE GÉNÉRAL
+============================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-@media (max-width: 600px) {
-    nav a {
-        display: block;
-        margin: 10px;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    .produit {
-        width: 85%;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8f3;
+    color: #333;
+    line-height: 1.6;
 }
-    body {
-        background-color: lightblue;
-        text-align: center;
-        font-family: Arial;
-    }
 
-    h1 {
-        color: blue;
-    }
 
-    p {
-        color: red;
-    }
+/* ==============================
+   MENU
+============================== */
 
-    button {
-        background-color: green;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    input {
-        padding: 10px;
-        border-radius: 5px;
-    }
-     
-   button:hover {
-    background-color: darkgreen;
-    transform: scale(1.05);
-} 
-     .produit {
-    background-color: white;
-    width: 220px;
-    padding: 15px;
-    border-radius: 10px;
-}
-     .produit img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-     #produits {
-    text-align: center;
-}
-.liste-produits {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-     .prix {
-    font-weight: bold;
-    color: green;
-    font-size: 18px;
-}
-     nav {
-    background-color: #ffffff;
-    padding: 15px;
+nav {
+    background: white;
+    padding: 15px 10px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
 }
 
 nav a {
-    margin: 0 15px;
+    display: inline-block;
+    margin: 5px 12px;
     text-decoration: none;
     font-weight: bold;
     color: #333;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: green;
+    color: #168a35;
 }
-</style>
-    </head>
 
-   <script>
-    function commander(produit) {
-        alert("Vous avez choisi : " + produit + 
-              ". Remplissez le formulaire pour envoyer votre commande.");
 
-        document.getElementById("contact").scrollIntoView({
-            behavior: "smooth"
-        });
+/* ==============================
+   ACCUEIL
+============================== */
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(
+        135deg,
+        #e7f7e9,
+        #ffffff
+    );
+}
+
+.logo {
+    width: 230px;
+    max-width: 80%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    color: #168a35;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #555;
+    font-size: 18px;
+}
+
+
+/* ==============================
+   SECTIONS
+============================== */
+
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #168a35;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+
+/* ==============================
+   À PROPOS
+============================== */
+
+.apropos {
+    text-align: center;
+    background: white;
+    margin-top: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.apropos p {
+    margin: 10px;
+}
+
+
+/* ==============================
+   ACTIVITÉS
+============================== */
+
+.activites {
+    max-width: 700px;
+    margin: auto;
+}
+
+.activites li {
+    list-style: none;
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+}
+
+.activites li::before {
+    content: "✓ ";
+    color: green;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   SALUTATION
+============================== */
+
+.salutation {
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+input {
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background: #168a35;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0c6826;
+    transform: scale(1.05);
+}
+
+#message {
+    margin-top: 15px;
+    color: #168a35;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   PRODUITS
+============================== */
+
+.liste-produits {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 25px;
+}
+
+.produit {
+    background: white;
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.10);
+
+    transition: 0.3s;
+}
+
+.produit:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15);
+}
+
+.produit img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.produit h3 {
+    margin: 12px 0;
+}
+
+.produit p {
+    color: #666;
+}
+
+.prix {
+    color: #168a35 !important;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.quantite {
+    width: 75px;
+    text-align: center;
+}
+
+
+/* ==============================
+   CONTACT
+============================== */
+
+.contact {
+    background: white;
+    max-width: 1000px;
+    border-radius: 15px;
+}
+
+.formulaire {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+}
+
+iframe {
+    width: 100%;
+    height: 1200px;
+    border: none;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    background: #168a35;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 30px;
+}
+
+footer p {
+    color: white;
+    margin: 5px;
+}
+
+
+/* ==============================
+   WHATSAPP
+============================== */
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    width: 60px;
+    height: 60px;
+
+    background: #25D366;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: 28px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.25);
+
+    z-index: 2000;
+
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 600px) {
+
+    nav a {
+        margin: 4px 6px;
+        font-size: 14px;
     }
-</script> 
-<body> 
-    
-    <nav>
-        
-    <a href="#accueil">Accueil</a>
-        
-    <a href="#apropos">À propos</a>
-        
-    <a href="#activites">Nos activités</a>
-        
-    <a href="#contact">Contact</a>
-</nav>
-    <img src="logo.jpeg" alt="Logo ETHICAJOU.SA" width="400">
 
-    <h1>Bienvenue sur le site Officiel de ETHICAJOU.SA</h1>
-    
-    <h2>À propos de nous</h2>
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .liste-produits {
+        grid-template-columns: 1fr;
+    }
+
+    .produit {
+        width: 100%;
+    }
+
+    .whatsapp {
+        width: 55px;
+        height: 55px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     MENU
+============================== -->
+
+<nav>
+
+<a href="#accueil">Accueil</a>
+
+<a href="#apropos">À propos</a>
+
+<a href="#activites">Nos activités</a>
+
+<a href="#produits">Nos produits</a>
+
+<a href="#contact">Commander</a>
+
+</nav>
+
+
+
+<!-- ==============================
+     ACCUEIL
+============================== -->
+
+<header
+    id="accueil"
+    class="hero">
+
+<img
+    src="logo.jpeg"
+    alt="Logo ETHICAJOU.SA"
+    class="logo">
+
+<h1>
+Bienvenue sur le site officiel
+de ETHICAJOU.SA
+</h1>
 
 <p>
-    ETHICAJOU.SA est une entreprise située à Kolda, en Casamance.
+Des noix de cajou transformées
+au cœur de la Casamance.
 </p>
 
-<h2>Nos activités</h2>
+</header>
 
-<ul>
-    <li>Transformation de noix de cajou</li>
-    <li>Production de noix de cajou grillées</li>
-    <li>Commercialisation de produits locaux</li>
+
+
+<!-- ==============================
+     À PROPOS
+============================== -->
+
+<section
+    id="apropos"
+    class="apropos">
+
+<h2>
+À propos de nous
+</h2>
+
+<p>
+<strong>ETHICAJOU.SA</strong> est une entreprise
+située à <strong>Dioulacolon, en Casamance</strong>.
+</p>
+
+<p>
+Nous valorisons les produits locaux,
+notamment les noix de cajou produites
+dans notre région.
+</p>
+
+</section>
+
+
+
+<!-- ==============================
+     ACTIVITÉS
+============================== -->
+
+<section id="activites">
+
+<h2>
+Nos activités
+</h2>
+
+<ul class="activites">
+
+<li>
+Transformation de noix de cajou
+</li>
+
+<li>
+Production de noix de cajou grillées
+</li>
+
+<li>
+Commercialisation de produits locaux
+</li>
+
+<li>
+Valorisation des produits de Casamance
+</li>
+
 </ul>
-    
-    <h2>Quel est votre nom ?</h2>
 
-<input type="text" id="nom" placeholder="Entrez votre nom">
+</section>
 
-<button onclick="saluer()">Valider</button>
+
+
+<!-- ==============================
+     SALUTATION
+============================== -->
+
+<section class="salutation">
+
+<h2>
+Bienvenue chez ETHICAJOU.SA
+</h2>
+
+<p>
+Quel est votre nom ?
+</p>
+
+<br>
+
+<input
+    type="text"
+    id="nom"
+    placeholder="Entrez votre nom">
+
+<button onclick="saluer()">
+Valider
+</button>
 
 <p id="message"></p>
 
-<script>
-    function saluer() {
-        let nom = document.getElementById("nom").value;
-
-        document.getElementById("message").innerHTML =
-            "Bienvenue " + nom + " sur le site ETHICAJOU.SA !";
-    }
-</script>
-
-    <p style="color: red;">
-        Nous sommes en Casamance, plus précisément à Kolda.
-    </p>
-
-    <a href="https://www.google.com">Aller sur Google</a>
-
-    <br><br>
-
-    <button onclick="alert('Bravo ! Vous avez cliqué sur le bouton.')">
-        Cliquez ici
-    </button>
-    
-  <section id="produits">
-
-    <h2>Nos produits</h2>
-
-    <div class="liste-produits">
-
-        <div class="produit">
-            <img src="cajou grillées.jpeg" alt="Amandes de cajou grillées salé" width="250">
-            <h3>Amandes de cajou grillées salé</h3>
-            
-            <p>Découvrez nos Noix de Cajou transformées à Kolda</p>
-            <p class="prix">200g à 2300 FCFA</p> 
-            
-           <label>Quantité :</label>
-<input type="number" min="1" value="1">
-
-<br><br>
-
-<button onclick="commander('Amandes de cajou grillées salé')">
-    Commander
-    
-</button>
-        
-        </div>
-
-        <div class="produit">
-            <img src="cajou Bio.jpeg" alt="Amandes de cajou grillées" width="300">
-            <h3>Amandes de cajou grillées simple</h3>
-            <p>Découvrez nos Noix de Cajou transformées à Kolda</p>
-            <p class="prix">200g à 2000 FCFA</p>  
-            <label>Quantité :</label>
-<input type="number" min="1" value="1">
-
-<br><br>
-
-<button onclick="commander('Amandes de cajou grillées simple')">
-    Commander
-</button>
-
-    </div>
-        <div class="produit">
-            <img src="brisures.jpeg" alt="amandes Nature" width="300">
-            <h3>amandes brisures grillées</h3>
-            <p>Découvrez nos Noix de Cajou transformées à Kolda</p>
-            <p class="prix">prix : 7000FCFA le kg</p>  
-            <label>Quantité :</label>
-<input type="number" min="1" value="1">
-
-<br><br>
-
-<button onclick="commander('amandes brisures grillées')">
-    Commander
-</button>
-
-    </div>
-        <div class="produit">
-            <img src="entière.jpeg" alt="amandes Nature" width="300">
-            <h3>amandes entière Nature</h3>
-            <p>Découvrez nos Noix de Cajou transformées à Kolda</p>
-            <p class="prix">prix : 9000 FCFA le kg</p>  
-            <label>Quantité :</label>
-<input type="number" min="1" value="1">
-
-<br><br>
-
-<button onclick="commander('amandes entière Nature')">
-    Commander
-</button>
-
-    </div>
-        <div class="produit">
-            <img src="entières nature 200g.jpeg" alt="amandes Nature" width="300">
-            <h3>amandes entière Nature 200g</h3>
-            <p>Découvrez nos Noix de Cajou transformées à Kolda</p>
-            <p class="prix">200g à 1800 FCFA</p>  
-            <label>Quantité :</label>
-<input type="number" min="1" value="1">
-
-<br><br>
-
-<button onclick="commander('amande entières nature')">
-    Commander
-</button>
-
-    </div> 
-        <div class="produit">
-            <img src="amande entières1kg.jpeg" alt="amandes de cajou grillées simple" width="300">
-            <h3>amandes de cajou grillées 1kg</h3>
-            <p>Découvrez nos Noix de Cajou transformées à Kolda</p>
-            <p class="prix">Prix 10000 FCFA</p>  
-            <label>Quantité :</label>
-<input type="number" min="1" value="1">
-
-<br><br>
-
-<button onclick="commander('amandes de cajou grillées 1kg')">
-    Commander
-</button>
-
-    </div> 
-        <div class="produit">
-            <img src="amandes brisuresnature.jpeg" alt="amandes brisuresnature" width="300">
-            <h3>amandes brisures nature</h3>
-            <p>Découvrez nos Noix de Cajou transformées à Kolda</p>
-            <p class="prix">200g à 1200 FCFA</p>  
-            <label>Quantité :</label>
-<input type="number" min="1" value="1">
-
-<br><br>
-
-<button onclick="commander('amandes brisures nature')">
-    Commander
-</button>
-
-    </div> 
 </section>
-    
-    <h2 id="contact">Contactez-nous</h2>
-<h2 id="contact">Contactez-nous / Commander</h2>
+
+
+
+<!-- ==============================
+     PRODUITS
+============================== -->
+
+<section id="produits">
+
+<h2>
+Nos produits
+</h2>
+
+
+<div class="liste-produits">
+
+
+<!-- PRODUIT 1 -->
+
+<div class="produit">
+
+<img
+    src="cajou grillées.jpeg"
+    alt="Amandes de cajou grillées salées">
+
+<h3>
+Amandes de cajou grillées salées
+</h3>
+
+<p>
+Noix de cajou transformées
+à Dioulacolon.
+</p>
+
+<p class="prix">
+200g : 2300 FCFA
+</p>
+
+<label>
+Quantité :
+</label>
+
+<input
+    class="quantite"
+    type="number"
+    min="1"
+    value="1">
+
+<br><br>
+
+<button
+    onclick="commander(
+        this,
+        'Amandes de cajou grillées salées',
+        '2300'
+    )">
+
+Commander
+
+</button>
+
+</div>
+
+
+
+<!-- PRODUIT 2 -->
+
+<div class="produit">
+
+<img
+    src="cajou Bio.jpeg"
+    alt="Amandes de cajou grillées simples">
+
+<h3>
+Amandes de cajou grillées simples
+</h3>
+
+<p>
+Noix de cajou transformées
+avec soin.
+</p>
+
+<p class="prix">
+200g : 2000 FCFA
+</p>
+
+<label>
+Quantité :
+</label>
+
+<input
+    class="quantite"
+    type="number"
+    min="1"
+    value="1">
+
+<br><br>
+
+<button
+    onclick="commander(
+        this,
+        'Amandes de cajou grillées simples',
+        '2000'
+    )">
+
+Commander
+
+</button>
+
+</div>
+
+
+
+<!-- PRODUIT 3 -->
+
+<div class="produit">
+
+<img
+    src="brisures.jpeg"
+    alt="Amandes brisures grillées">
+
+<h3>
+Amandes brisures grillées
+</h3>
+
+<p>
+Noix de cajou transformées
+à Dioulacolon.
+</p>
+
+<p class="prix">
+7000 FCFA / kg
+</p>
+
+<label>
+Quantité :
+</label>
+
+<input
+    class="quantite"
+    type="number"
+    min="1"
+    value="1">
+
+<br><br>
+
+<button
+    onclick="commander(
+        this,
+        'Amandes brisures grillées',
+        '7000'
+    )">
+
+Commander
+
+</button>
+
+</div>
+
+
+
+<!-- PRODUIT 4 -->
+
+<div class="produit">
+
+<img
+    src="entière.jpeg"
+    alt="Amandes entières nature">
+
+<h3>
+Amandes entières nature
+</h3>
+
+<p>
+Noix de cajou naturelles
+de Casamance.
+</p>
+
+<p class="prix">
+9000 FCFA / kg
+</p>
+
+<label>
+Quantité :
+</label>
+
+<input
+    class="quantite"
+    type="number"
+    min="1"
+    value="1">
+
+<br><br>
+
+<button
+    onclick="commander(
+        this,
+        'Amandes entières nature',
+        '9000'
+    )">
+
+Commander
+
+</button>
+
+</div>
+
+
+
+<!-- PRODUIT 5 -->
+
+<div class="produit">
+
+<img
+    src="entières nature 200g.jpeg"
+    alt="Amandes entières nature 200g">
+
+<h3>
+Amandes entières nature 200g
+</h3>
+
+<p>
+Produit naturel transformé
+en Casamance.
+</p>
+
+<p class="prix">
+200g : 1800 FCFA
+</p>
+
+<label>
+Quantité :
+</label>
+
+<input
+    class="quantite"
+    type="number"
+    min="1"
+    value="1">
+
+<br><br>
+
+<button
+    onclick="commander(
+        this,
+        'Amandes entières nature 200g',
+        '1800'
+    )">
+
+Commander
+
+</button>
+
+</div>
+
+
+
+<!-- PRODUIT 6 -->
+
+<div class="produit">
+
+<img
+    src="amande entières1kg.jpeg"
+    alt="Amandes de cajou grillées 1kg">
+
+<h3>
+Amandes de cajou grillées 1kg
+</h3>
+
+<p>
+Format familial.
+</p>
+
+<p class="prix">
+10000 FCFA
+</p>
+
+<label>
+Quantité :
+</label>
+
+<input
+    class="quantite"
+    type="number"
+    min="1"
+    value="1">
+
+<br><br>
+
+<button
+    onclick="commander(
+        this,
+        'Amandes de cajou grillées 1kg',
+        '10000'
+    )">
+
+Commander
+
+</button>
+
+</div>
+
+
+
+<!-- PRODUIT 7 -->
+
+<div class="produit">
+
+<img
+    src="amandes brisuresnature.jpeg"
+    alt="Amandes brisures nature">
+
+<h3>
+Amandes brisures nature
+</h3>
+
+<p>
+Noix de cajou naturelles
+de qualité.
+</p>
+
+<p class="prix">
+200g : 1200 FCFA
+</p>
+
+<label>
+Quantité :
+</label>
+
+<input
+    class="quantite"
+    type="number"
+    min="1"
+    value="1">
+
+<br><br>
+
+<button
+    onclick="commander(
+        this,
+        'Amandes brisures nature',
+        '1200'
+    )">
+
+Commander
+
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==============================
+     CONTACT / COMMANDE
+============================== -->
+
+<section
+    id="contact"
+    class="contact">
+
+<h2>
+Contactez-nous / Commander
+</h2>
+
+
+<div class="formulaire">
 
 <iframe
     id="JotFormIFrame-261934932078061"
-    title="Formulaire de contact"
+    title="Formulaire de commande"
     src="https://form.jotform.com/261934932078061"
     frameborder="0"
-    style="min-width:100%; max-width:100%; height:1200px; border:none;"
     scrolling="no">
 </iframe>
 
+</div>
+
+</section>
+
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+<p>
+© 2026 ETHICAJOU.SA
+</p>
+
+<p>
+Casamance - Dioulacolon - Sénégal
+</p>
+
+<p>
+Transformation et valorisation
+de noix de cajou
+</p>
+
+</footer>
+
+
+
+<!-- ==============================
+     WHATSAPP
+============================== -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/221773189802"
+    target="_blank"
+    title="Nous contacter sur WhatsApp">
+
+☎
+
+</a>
+
+
+
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+
 <script>
-window.addEventListener("message", function(event) {
 
-    if (event.data && event.data.action === "submission-completed") {
 
-        // Attendre 2 secondes après l'envoi
-        setTimeout(function() {
+/* ==============================
+   SALUTATION
+============================== */
 
-            const iframe = document.getElementById(
-                "JotFormIFrame-261934932078061"
-            );
+function saluer() {
 
-            // Recharger le formulaire
-            iframe.src = "https://form.jotform.com/261934932078061";
+    let nom =
+        document
+        .getElementById("nom")
+        .value
+        .trim();
 
-        }, 2000);
+
+    if (nom === "") {
+
+        document
+        .getElementById("message")
+        .innerHTML =
+        "⚠️ Veuillez entrer votre nom.";
+
+        return;
     }
 
-});
+
+    document
+    .getElementById("message")
+    .innerHTML =
+    "👋 Bienvenue " +
+    nom +
+    " sur ETHICAJOU.SA !";
+
+}
+
+
+
+/* ==============================
+   COMMANDER
+============================== */
+
+function commander(
+    bouton,
+    produit,
+    prix
+) {
+
+
+    /* Récupérer la quantité */
+
+    const carte =
+        bouton.closest(".produit");
+
+
+    const quantite =
+        carte
+        .querySelector(".quantite")
+        .value;
+
+
+    if (
+        !quantite ||
+        quantite < 1
+    ) {
+
+        alert(
+            "⚠️ Veuillez choisir une quantité."
+        );
+
+        return;
+    }
+
+
+
+    /* Calcul du total */
+
+    const total =
+        Number(prix) *
+        Number(quantite);
+
+
+
+    /* Message */
+
+    alert(
+        "🛒 PRODUIT : " +
+        produit +
+
+        "\n📦 QUANTITÉ : " +
+        quantite +
+
+        "\n💰 TOTAL : " +
+        total +
+        " FCFA" +
+
+        "\n\nLe formulaire de commande va s'ouvrir."
+    );
+
+
+
+    /* =========================
+       INFORMATIONS COMMANDE
+    ========================= */
+
+    const url =
+        "https://form.jotform.com/261934932078061"
+        +
+        "?produit="
+        +
+        encodeURIComponent(produit)
+
+        +
+        "&quantite="
+        +
+        encodeURIComponent(quantite)
+
+        +
+        "&prix="
+        +
+        encodeURIComponent(prix)
+
+        +
+        "&total="
+        +
+        encodeURIComponent(total);
+
+
+
+    /* Modifier l'adresse du formulaire */
+
+    const iframe =
+        document.getElementById(
+            "JotFormIFrame-261934932078061"
+        );
+
+
+    iframe.src = url;
+
+
+
+    /* Aller au formulaire */
+
+    document
+        .getElementById("contact")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+
+/* ==============================
+   JOTFORM APRÈS ENVOI
+============================== */
+
+window.addEventListener(
+    "message",
+    function(event) {
+
+
+        if (
+            event.data &&
+            event.data.action ===
+            "submission-completed"
+        ) {
+
+
+            setTimeout(
+                function() {
+
+
+                    const iframe =
+                        document.getElementById(
+                            "JotFormIFrame-261934932078061"
+                        );
+
+
+                    iframe.src =
+                        "https://form.jotform.com/261934932078061";
+
+
+                },
+                2000
+            );
+
+        }
+
+    }
+);
+
 </script>
-<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+
+
+
+<!-- JOTFORM -->
+
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js">
+</script>
+
 
 <script>
-    window.jotformEmbedHandler(
-        "iframe[id='JotFormIFrame-261934932078061']",
-        "https://form.jotform.com/"
-    );
+
+window.jotformEmbedHandler(
+
+    "iframe[id='JotFormIFrame-261934932078061']",
+
+    "https://form.jotform.com/"
+
+);
+
 </script>
-    
+
 
 </body>
 
