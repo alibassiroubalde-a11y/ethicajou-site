@@ -332,15 +332,8 @@ dans notre région.
 <h3>Amandes de cajou grillées salées</h3>
 <p>Noix de cajou transformées à Dioulacolon.</p>
 <p class="prix">200g : 2300 FCFA</p>
-<label for="quantity">Quantité</label>
-<input 
-    type="number" 
-    id="quantity" 
-    name="quantity" 
-    min="1" 
-    value="1"
-    placeholder="Entrez la quantité"
->
+<label>Quantité :</label>
+<input class="quantite" type="number" min="1" step="1" value="1" inputmode="numeric">
 <br><br>
 <button onclick="commander(this, 'Amandes de cajou grillées salées', '2300')">Commander</button>
 </div>
